@@ -16,4 +16,4 @@ Route::get('/', function () {
 });
 // RESOURCES pouzito pro mozne rozsireni
 Route::resource('tasks', 'Frontend\TaskController');
-Route::resource('comments', 'Frontend\TaskController');
+Route::resource('comments', 'Frontend\CommentController');

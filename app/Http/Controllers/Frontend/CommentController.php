@@ -14,9 +14,9 @@ class CommentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function show($id)
     {
         $data['item'] = Comment::findOrFail($id);
-        return view('frontend.comment.index')->with($data);
+        return view('frontend.comment.show')->with($data);
     }
 }
