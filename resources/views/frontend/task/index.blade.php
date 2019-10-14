@@ -6,7 +6,7 @@
         <th scope="col">#</th>
         <th scope="col">Name</th>
         <th scope="col">Status</th>
-        <th scope="col">Comments</th>
+        <th scope="col">Komentáře</th>
     </tr>
     </thead>
     <tbody>
@@ -15,7 +15,7 @@
             <th scope="row">{{$item->id}}</th>
             <td>{{$item->name}}</td>
             <td>{{$item->status->name}}</td>
-            <td><a href="{{route('comments.index', ['id'=>$item->id])}}">{{$item->comments()->count()}}</a></td>
+            <td><a href="{{route('comments.show', ['id'=>$item->id])}}">{{$item->comments()->count()}}</a></td>
         </tr>
     @endforeach
     </tbody>
