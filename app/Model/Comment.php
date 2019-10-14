@@ -2,16 +2,27 @@
 
 namespace App\Model;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Model\BaseModel as Model;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Comment extends Model
 {
-    public function task()
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function task():BelongsTo
     {
         return $this->belongsTo(Task::class);
     }
-    public function getDateCreatedAttribute()
+
+    /**
+     * return reformated date type
+     * @return false|string
+     */
+    public function getDateCreatedAttribute(): Carbon
     {
-        return Date('d. m. yyyy H:i:s');
+        return new Carbon($this->created_at);
     }
 }
