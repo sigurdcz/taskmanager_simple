@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+// RESOURCES pouzito pro mozne rozsireni
+Route::resource('tasks', 'Frontend\TaskController');
+Route::resource('comments', 'Frontend\TaskController');

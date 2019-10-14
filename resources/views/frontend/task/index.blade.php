@@ -9,13 +9,12 @@
     </tr>
     </thead>
     <tbody>
-
     @foreach($items as $item)
         <tr>
             <th scope="row">{{$item->id}}</th>
             <td>{{$item->name}}</td>
             <td>{{$item->status->name}}</td>
-            <td><a href="{{route('frontend-comments', ['id'=>$item->id])}}">{{$item->comments()->count()}}</a></td>
+            <td><a href="{{route('comments.index', ['id'=>$item->id])}}">{{$item->comments()->count()}}</a></td>
         </tr>
     @endforeach
     </tbody>
