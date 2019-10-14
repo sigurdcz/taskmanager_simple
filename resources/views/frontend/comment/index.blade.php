@@ -1,3 +1,4 @@
+@extends('frontend.layouts.default')
 @section('content')
 <table class="table table-striped">
     <thead>
