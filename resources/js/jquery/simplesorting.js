@@ -51,7 +51,7 @@ $(document).ready(function()
 
     function fetch_data(page, sort_type, sort_by, term, take)
     {
-        let url = "/ajax-tasks?page="+page+"&sortby="+sort_by+"&sorttype="+sort_type+"&term="+term+"&take="+take;
+        let url = "/api/ajax-tasks?page="+page+"&sortby="+sort_by+"&sorttype="+sort_type+"&term="+term+"&take="+take;
         let ajaxData = {
             url:url,
             success:function(data)

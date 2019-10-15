@@ -8,7 +8,6 @@
             <div class="col-sm-12 col-md-6">
                 <div class="dataTables_length bs-select"><label>Show
                         <select id="take_page" class="custom-select custom-select-sm form-control form-control-sm">
-                            <option value="3">3</option>
                             <option value="5">5</option>
                             <option value="10">10</option>
                             <option value="25">25</option>
