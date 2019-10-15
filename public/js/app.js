@@ -109,17 +109,19 @@ function getPaginationInputData() {
   var column_name = $('#hidden_column_name').val();
   var sort_type = $('#hidden_sort_type').val();
   var page = $('#hidden_page').val();
+  var take = $('#take_page').val();
   return {
     term: term,
     column_name: column_name,
     sort_type: sort_type,
-    page: page
+    page: page,
+    take: take
   };
 }
 
 $(document).ready(function () {
   // f
-  fetch_data(1, 'asc', 'id', '');
+  fetch_data(1, 'asc', 'id', '', 5);
   $(document).on('click', '.sorting', function (event) {
     var new_column_name = $(this).attr('data-column_name');
     var current_sort_type = $('#hidden_sort_type').val();
@@ -138,9 +140,10 @@ $(document).ready(function () {
         term = _getPaginationInputDa.term,
         column_name = _getPaginationInputDa.column_name,
         sort_type = _getPaginationInputDa.sort_type,
-        page = _getPaginationInputDa.page;
+        page = _getPaginationInputDa.page,
+        take = _getPaginationInputDa.take;
 
-    fetch_data(page ? page : '1', sort_type ? sort_type : 'asc', column_name ? column_name : 'id', term ? term : '');
+    fetch_data(page ? page : '1', sort_type ? sort_type : 'asc', column_name ? column_name : 'id', term ? term : '', take ? take : 5);
   });
   $(document).on('click', '.pagination a', function (event) {
     event.preventDefault();
@@ -153,22 +156,34 @@ $(document).ready(function () {
         term = _getPaginationInputDa2.term,
         column_name = _getPaginationInputDa2.column_name,
         sort_type = _getPaginationInputDa2.sort_type,
-        page = _getPaginationInputDa2.page;
+        page = _getPaginationInputDa2.page,
+        take = _getPaginationInputDa2.take;
 
-    fetch_data(page ? page : '1', sort_type ? sort_type : 'asc', column_name ? column_name : 'id', term ? term : '');
+    fetch_data(page ? page : '1', sort_type ? sort_type : 'asc', column_name ? column_name : 'id', term ? term : '', take ? take : '');
   });
-  $(document).on('keyup', '#search', function () {
+  $(document).on('change', '#take_page', function () {
     var _getPaginationInputDa3 = getPaginationInputData(),
         term = _getPaginationInputDa3.term,
         column_name = _getPaginationInputDa3.column_name,
         sort_type = _getPaginationInputDa3.sort_type,
-        page = _getPaginationInputDa3.page;
+        page = _getPaginationInputDa3.page,
+        take = _getPaginationInputDa3.take;
 
-    fetch_data(page ? page : '1', sort_type ? sort_type : 'asc', column_name ? column_name : 'id', term ? term : '');
+    fetch_data(page ? page : '1', sort_type ? sort_type : 'asc', column_name ? column_name : 'id', term ? term : '', take ? take : '');
+  });
+  $(document).on('keyup', '#search', function () {
+    var _getPaginationInputDa4 = getPaginationInputData(),
+        term = _getPaginationInputDa4.term,
+        column_name = _getPaginationInputDa4.column_name,
+        sort_type = _getPaginationInputDa4.sort_type,
+        page = _getPaginationInputDa4.page,
+        take = _getPaginationInputDa4.take;
+
+    fetch_data(page ? page : '1', sort_type ? sort_type : 'asc', column_name ? column_name : 'id', term ? term : '', take ? take : '');
   });
 
-  function fetch_data(page, sort_type, sort_by, term) {
-    var url = "/ajax-tasks?page=" + page + "&sortby=" + sort_by + "&sorttype=" + sort_type + "&term=" + term;
+  function fetch_data(page, sort_type, sort_by, term, take) {
+    var url = "/ajax-tasks?page=" + page + "&sortby=" + sort_by + "&sorttype=" + sort_type + "&term=" + term + "&take=" + take;
     var ajaxData = {
       url: url,
       success: function success(data) {
@@ -199,8 +214,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\WORKHOME\projekty\manager\taskmanager_simple\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\WORKHOME\projekty\manager\taskmanager_simple\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! E:\LEKSYS\projekty\tm\taskmanager_simple\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! E:\LEKSYS\projekty\tm\taskmanager_simple\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

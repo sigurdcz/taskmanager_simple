@@ -29,8 +29,9 @@ class TaskController extends Controller
         $sort_type = $request->get('sorttype') ?? 'asc';
         $page= $request->get('page') ?? 1;
         $term = $request->get('term') ?? '';
+        $take = $request->get('take') ?? 5;
 
-        $data['items'] = Task::orderBy($sort_by, $sort_type)->where('name', 'like', '%'.$term.'%') ->paginate(5);
+        $data['items'] = Task::orderBy($sort_by, $sort_type)->where('name', 'like', '%'.$term.'%') ->paginate($take);
         $data['sortby'] = $sort_by;
         $data['sorttype'] = $sort_type ;
         $data['page'] =  $page;

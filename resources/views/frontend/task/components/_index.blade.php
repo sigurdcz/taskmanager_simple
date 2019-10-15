@@ -14,7 +14,7 @@
                     <th class="sorting" data-sorting_type="asc" data-column_name="name" style="cursor: pointer">Name <span id="id_icon"></span></th>
                 <th>Status
                 </th>
-                <th>Comments
+                <th>Comments (count)
                 </th>
                 </tr>
                 </thead>
@@ -27,7 +27,7 @@
                         <th scope="row">{{$item->id}}</th>
                         <td>{{$item->name}}</td>
                         <td>{{$item->status->name}}</td>
-                        <td><a href="{{route('comments.show', ['id'=>$item->id])}}">{{$item->comments()->count()}}</a></td>
+                        <td><a href="{{route('comments.show', ['id'=>$item->id])}}"><button class="btn btn-outline-info"> Detail ({{$item->comments()->count()}})</button></a></td>
                     </tr>
                 @endforeach
 
