@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Model\Task;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\View\View;
 
 class TaskController extends Controller
 {
@@ -17,6 +18,16 @@ class TaskController extends Controller
     {
         $data['items'] = Task::paginate(5);
         return view('frontend.task.index')->with($data);
+    }
+
+    /**
+     * @param int $id
+     * @return View
+     */
+    public function show(int $id): View
+    {
+        $data['item'] = Task::findOrFail($id);
+        return view('frontend.task.show')->with($data);
     }
 
     /**

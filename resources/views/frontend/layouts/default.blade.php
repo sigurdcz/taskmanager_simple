@@ -14,7 +14,7 @@
 
 <div class="nav-scroller bg-white box-shadow">
   <nav class="nav nav-underline">
-    <a class="nav-link active" href="#">Homepage</a>
+
     <a class="nav-link" href="{{route('tasks.index')}}">
       Tasks
       <span class="badge badge-pill bg-light align-text-bottom">{{$tasks->count()}}</span>

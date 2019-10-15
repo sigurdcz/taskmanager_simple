@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
          *  Vysledek je - komentar je nahodne rozdelen k tasku
          */
         factory(Task::class, 10)->create();
-        factory(Comment::class, 10)->create();
+        factory(Comment::class, 100)->create();
 
     }
 }

@@ -27,7 +27,7 @@
                         <th scope="row">{{$item->id}}</th>
                         <td>{{$item->name}}</td>
                         <td>{{$item->status->name}}</td>
-                        <td><a href="{{route('comments.show', ['id'=>$item->id])}}"><button class="btn btn-outline-info"> Detail ({{$item->comments()->count()}})</button></a></td>
+                        <td><a href="{{route('tasks.show', ['id'=>$item->id])}}"><button class="btn btn-outline-info"> Detail ({{$item->comments()->count()}})</button></a></td>
                     </tr>
                 @endforeach
 
