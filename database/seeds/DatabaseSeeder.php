@@ -20,11 +20,11 @@ class DatabaseSeeder extends Seeder
 
         /**
          * vytvoreni zaznamu deseti tasku s nahodnym poctem komentaru
-         *  celkovy pocet komentaru je roven deseti
-         *  Vysledek je - komentar je nahodne rozdelen k tasku
+         *  celkovy pocet komentaru je roven 30
+         *  Vysledek je - task ma 0 - 30 commentaru
          */
         factory(Task::class, 10)->create();
-        factory(Comment::class, 100)->create();
+        factory(Comment::class, 30)->create();
 
     }
 }

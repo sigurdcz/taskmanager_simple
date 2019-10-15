@@ -21,8 +21,8 @@ class Comment extends Model
      * return reformated date type
      * @return false|string
      */
-    public function getDateCreatedAttribute(): Carbon
+    public function getDateCreatedAttribute(): String
     {
-        return new Carbon($this->created_at);
+        return (new Carbon($this->created_at))->toFormattedDateString();
     }
 }
