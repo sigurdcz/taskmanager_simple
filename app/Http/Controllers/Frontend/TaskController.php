@@ -34,7 +34,7 @@ class TaskController extends Controller
      * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function ajax_index(Request $request)
+    public function ajax_index(Request $request): View
     {
         $sort_by = $request->get('sortby') ?? 'id';
         $sort_type = $request->get('sorttype') ?? 'asc';
